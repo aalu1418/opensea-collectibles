@@ -46,7 +46,8 @@ const FACTORY_ABI = [{
 }]
 
 async function main() {
-    const provider = ethers.providers.getDefaultProvider(NETWORK);
+    // const provider = ethers.providers.getDefaultProvider([network = NETWORK]);
+    const provider = new ethers.providers.InfuraProvider(NETWORK);
     const wallet = new ethers.Wallet( PRIVATE_KEY, provider );
 
     if (NFT_CONTRACT_ADDRESS) {
